@@ -1,25 +1,49 @@
 {
+   "Anonymous MainWidget": 
+   {
+       "Average": 112.320190,
+       "CPU usage": 0.000004,
+       "Cardinal": 307584,
+       "Max": 128900,
+       "Min": 0
+   },
    "CentralWidget": 
    {
-       "Average": 236.226974,
-       "CPU usage": 0.000015,
-       "Cardinal": 404014,
-       "Max": 652300,
+       "Average": 241.818130,
+       "CPU usage": 0.000008,
+       "Cardinal": 307584,
+       "Max": 245400,
        "Min": 100
    },
    "FPSCounter": 
    {
-       "Average": 718.750000,
-       "Cardinal": 8,
-       "Max": 960,
-       "Min": 270
+       "Average": 565.238098,
+       "Cardinal": 21,
+       "Max": 730,
+       "Min": 100
    },
-   "Total program duration": 1629,
+   "MainMenu": 
+   {
+       "Average": 104.286072,
+       "CPU usage": 0.000003,
+       "Cardinal": 307584,
+       "Max": 129300,
+       "Min": 0
+   },
+   "Total program duration": 3139,
    "UPSCounter": 
    {
-       "Average": 505017.500000,
-       "Cardinal": 8,
-       "Max": 804620,
-       "Min": 403600
+       "Average": 146468.562500,
+       "Cardinal": 21,
+       "Max": 726320,
+       "Min": 95900
+   },
+   "Unnamed widget": 
+   {
+       "Average": 104.983635,
+       "CPU usage": 0.000003,
+       "Cardinal": 307584,
+       "Max": 216500,
+       "Min": 0
    }
 }
