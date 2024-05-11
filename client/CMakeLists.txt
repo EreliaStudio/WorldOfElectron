@@ -3,12 +3,16 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(ExecutableName "WorldOfElectron")
 
+find_package(Sparkle REQUIRED)
+
 file(GLOB_RECURSE SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 add_executable(${ExecutableName} ${SRC_FILES})
 
 target_include_directories(${ExecutableName} PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/src"
-	"${CMAKE_SOURCE_DIR}/commun/src"
+    ${SPARKLE_INCLUDE_DIRS}
 )
 
-target_link_libraries(${ExecutableName} WOE_Commun)
+target_link_libraries(${ExecutableName} PUBLIC ${SPARKLE_LIBRARIES})
+
+target_link_directories(${ExecutableName} PUBLIC ${SPARKLE_LIBRARY_DIRS})
