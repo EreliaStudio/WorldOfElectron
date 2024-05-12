@@ -1,65 +1,65 @@
 {
    "Anonymous MainWidget": 
    {
-       "Average": 87.226463,
-       "CPU usage": 0.000002,
-       "Cardinal": 273780,
-       "Max": 180300,
+       "Average": 90.059692,
+       "CPU usage": 0.000001,
+       "Cardinal": 1122745,
+       "Max": 236700,
        "Min": 0
    },
    "CentralWidget": 
    {
-       "Average": 169.595200,
-       "CPU usage": 0.000004,
-       "Cardinal": 273780,
-       "Max": 189500,
+       "Average": 164.545837,
+       "CPU usage": 0.000001,
+       "Cardinal": 1122745,
+       "Max": 270800,
        "Min": 100
    },
    "FPSCounter": 
    {
-       "Average": 1339.117554,
-       "Cardinal": 34,
-       "Max": 1970,
+       "Average": 1148.849854,
+       "Cardinal": 113,
+       "Max": 1820,
        "Min": 10
    },
    "Main menu Selector": 
    {
-       "Average": 80.500885,
-       "CPU usage": 0.000002,
-       "Cardinal": 273780,
-       "Max": 70700,
+       "Average": 85.766472,
+       "CPU usage": 0.000001,
+       "Cardinal": 1122745,
+       "Max": 276300,
        "Min": 0
    },
    "MainPanel": 
    {
-       "Average": 79.955872,
-       "CPU usage": 0.000002,
-       "Cardinal": 273780,
-       "Max": 67700,
+       "Average": 79.568138,
+       "CPU usage": 0.000001,
+       "Cardinal": 1122745,
+       "Max": 266800,
        "Min": 0
    },
    "Title Background": 
    {
-       "Average": 64.097488,
-       "CPU usage": 0.000002,
-       "Cardinal": 273780,
-       "Max": 165500,
+       "Average": 58.258846,
+       "CPU usage": 0.000000,
+       "Cardinal": 1122745,
+       "Max": 277500,
        "Min": 0
    },
-   "Total program duration": 3810,
+   "Total program duration": 14238,
    "UPSCounter": 
    {
-       "Average": 80523.226562,
-       "Cardinal": 34,
-       "Max": 153950,
-       "Min": 67300
+       "Average": 99357.953125,
+       "Cardinal": 113,
+       "Max": 1804900,
+       "Min": 66190
    },
    "Unnamed widget": 
    {
-       "Average": 150.272232,
-       "CPU usage": 0.000004,
-       "Cardinal": 1095120,
-       "Max": 274000,
+       "Average": 140.141632,
+       "CPU usage": 0.000001,
+       "Cardinal": 4490980,
+       "Max": 272500,
        "Min": 0
    }
 }

@@ -15,7 +15,7 @@ void MainMenuPanel::SelectorWidget::_onGeometryChange()
 	
 	_titleLabel.setLayer(10);
 	_titleLabel.setGeometry(titleLabelAnchor, titleLabelSize);
-	_titleLabel.label().setTextSize(_titleLabel.label().font()->computeOptimalTextSize(_titleLabel.label().text(), _titleLabel.label().outlineSize(), _titleLabel.label().outlineStyle(), titleLabelSize - _titleLabel.box().cornerSize() * 3));
+	_titleLabel.label().setTextSize(_titleLabel.label().computeOptimalTextSize(titleLabelSize - _titleLabel.box().cornerSize() * 2));
 
 	spk::Vector2Int buttonSize = spk::Vector2Int(
 		titleLabelSize.x, 
@@ -27,13 +27,32 @@ void MainMenuPanel::SelectorWidget::_onGeometryChange()
 	);
 	
 	_joinGameButton.setLayer(10);
-	_joinGameButton.setGeometry(buttonAnchor + spk::Vector2Int(0, buttonSize.y + 10) * 0, buttonSize);
-
 	_hostGameButton.setLayer(10);
-	_hostGameButton.setGeometry(buttonAnchor + spk::Vector2Int(0, buttonSize.y + 10) * 1, buttonSize);
-
 	_quitGameButton.setLayer(10);
+
+	_joinGameButton.setGeometry(buttonAnchor + spk::Vector2Int(0, buttonSize.y + 10) * 0, buttonSize);
+	_hostGameButton.setGeometry(buttonAnchor + spk::Vector2Int(0, buttonSize.y + 10) * 1, buttonSize);
 	_quitGameButton.setGeometry(buttonAnchor + spk::Vector2Int(0, buttonSize.y + 10) * 2, buttonSize);
+
+	size_t buttonTextSize[6] = {
+		_joinGameButton.label(spk::Button::State::Pressed).computeOptimalTextSize(buttonSize - _joinGameButton.box(spk::Button::State::Pressed).cornerSize() * 2),
+		_joinGameButton.label(spk::Button::State::Released).computeOptimalTextSize(buttonSize - _joinGameButton.box(spk::Button::State::Released).cornerSize() * 2),
+		_hostGameButton.label(spk::Button::State::Pressed).computeOptimalTextSize(buttonSize - _hostGameButton.box(spk::Button::State::Pressed).cornerSize() * 2),
+		_hostGameButton.label(spk::Button::State::Released).computeOptimalTextSize(buttonSize - _hostGameButton.box(spk::Button::State::Released).cornerSize() * 2),
+		_quitGameButton.label(spk::Button::State::Pressed).computeOptimalTextSize(buttonSize - _quitGameButton.box(spk::Button::State::Pressed).cornerSize() * 2),
+		_quitGameButton.label(spk::Button::State::Released).computeOptimalTextSize(buttonSize - _quitGameButton.box(spk::Button::State::Released).cornerSize() * 2)};
+
+	size_t finalButtonTextSize = 20;
+	for (size_t i = 0; i < 6; i++)
+		finalButtonTextSize = std::min(finalButtonTextSize, buttonTextSize[i]);
+	
+	_joinGameButton.label(spk::Button::State::Released).setTextSize(finalButtonTextSize);
+	_hostGameButton.label(spk::Button::State::Released).setTextSize(finalButtonTextSize);
+	_quitGameButton.label(spk::Button::State::Released).setTextSize(finalButtonTextSize);
+
+	_joinGameButton.label(spk::Button::State::Pressed).setTextSize(finalButtonTextSize);
+	_hostGameButton.label(spk::Button::State::Pressed).setTextSize(finalButtonTextSize);
+	_quitGameButton.label(spk::Button::State::Pressed).setTextSize(finalButtonTextSize);
 }
 
 void MainMenuPanel::SelectorWidget::_onRender()

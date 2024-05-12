@@ -7,7 +7,7 @@ void MainMenuPanel::_onUpdate()
 
 void MainMenuPanel::_onGeometryChange()
 {
-	spk::Vector2Int selectorSize = spk::Vector2Int(std::min(400.0f, ((size().x) / 3.0f)), std::min(300.0f, ((size().y) / 1.5f)));
+	spk::Vector2Int selectorSize = spk::Vector2Int(std::min(600.0f, ((size().x) / 3.0f)), std::min(400.0f, ((size().y) / 1.5f)));
 	spk::Vector2Int selectorAnchor = (size() - selectorSize) / 2;
 	_selectorWidget.setGeometry(selectorAnchor, selectorSize);
 }
