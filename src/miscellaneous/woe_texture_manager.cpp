@@ -4,8 +4,10 @@ CustomTextureManager::CustomTextureManager()
 {
 	loadSpriteSheet("DefaultFrame", "resources/texture/frame.png", spk::Vector2UInt(3, 3));
 	loadSpriteSheet("DarkFrame", "resources/texture/frameDark.png", spk::Vector2UInt(3, 3));
+	loadSpriteSheet("TitleBackground", "resources/texture/title_background.png", spk::Vector2UInt(3, 3));
 
 	loadFont("DefaultFont", "resources/font/Roboto-Regular.ttf");
+	loadFont("TitleFont", "resources/font/PLANK___.ttf");
 }
 
 CustomTextureManager::~CustomTextureManager()

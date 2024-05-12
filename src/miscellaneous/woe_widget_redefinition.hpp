@@ -67,6 +67,8 @@ public:
 		box().setSpriteSheet(TextureManager::instance()->spriteSheet("DefaultFrame"));
 		box().setCornerSize(8);
 
+		setPlaceholder("Enter text ...");
+
 		label().setFont(TextureManager::instance()->font("DefaultFont"));
 		label().setVerticalAlignment(spk::VerticalAlignment::Top);
 		label().setHorizontalAlignment(spk::HorizontalAlignment::Left);
@@ -94,9 +96,31 @@ public:
 		spk::Button(p_name, p_parent)
 	{
 		box(spk::Button::State::Released).setSpriteSheet(TextureManager::instance()->spriteSheet("DefaultFrame"));
-		box(spk::Button::State::Released).setCornerSize(8);
+		box(spk::Button::State::Released).setCornerSize(8); 
 		
 		box(spk::Button::State::Pressed).setSpriteSheet(TextureManager::instance()->spriteSheet("DarkFrame"));
 		box(spk::Button::State::Pressed).setCornerSize(8);
+
+		label(spk::Button::State::Released).setFont(TextureManager::instance()->font("DefaultFont"));
+		label(spk::Button::State::Released).setVerticalAlignment(spk::VerticalAlignment::Centered);
+		label(spk::Button::State::Released).setHorizontalAlignment(spk::HorizontalAlignment::Centered);
+
+		label(spk::Button::State::Released).setTextSize(25);
+		label(spk::Button::State::Released).setTextColor(spk::Color(255, 255, 255));
+
+		label(spk::Button::State::Released).setOutlineSize(1);
+		label(spk::Button::State::Released).setOutlineColor(spk::Color(0, 0, 0));
+		label(spk::Button::State::Released).setOutlineStyle(spk::Font::OutlineStyle::Standard);
+		
+		label(spk::Button::State::Pressed).setFont(TextureManager::instance()->font("DefaultFont"));
+		label(spk::Button::State::Pressed).setVerticalAlignment(spk::VerticalAlignment::Centered);
+		label(spk::Button::State::Pressed).setHorizontalAlignment(spk::HorizontalAlignment::Centered);
+
+		label(spk::Button::State::Pressed).setTextSize(23);
+		label(spk::Button::State::Pressed).setTextColor(spk::Color(200, 200, 200));
+
+		label(spk::Button::State::Pressed).setOutlineSize(1);
+		label(spk::Button::State::Pressed).setOutlineColor(spk::Color(0, 0, 0));
+		label(spk::Button::State::Pressed).setOutlineStyle(spk::Font::OutlineStyle::Standard);
 	}
 };
