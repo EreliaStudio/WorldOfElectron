@@ -2,7 +2,7 @@
 
 #include "sparkle.hpp"
 
-#include "woe_texture_manager.hpp"
+#include "woe_texture_atlas.hpp"
 
 class Frame : public spk::Frame
 {
@@ -17,7 +17,7 @@ public:
 	Frame(const std::string& p_name, Widget* p_parent) :
 		spk::Frame(p_name, p_parent)
 	{
-		box().setSpriteSheet(TextureManager::instance()->spriteSheet("DefaultFrame"));
+		box().setSpriteSheet(TextureAtlas::instance()->spriteSheet("DefaultFrame"));
 		box().setCornerSize(8);
 	}
 };
@@ -35,10 +35,10 @@ public:
 	TextLabel(const std::string& p_name, Widget* p_parent) :
 		spk::TextLabel(p_name, p_parent)
 	{
-		box().setSpriteSheet(TextureManager::instance()->spriteSheet("DefaultFrame"));
+		box().setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Gray"));
 		box().setCornerSize(8);
 
-		label().setFont(TextureManager::instance()->font("DefaultFont"));
+		label().setFont(TextureAtlas::instance()->font("advanced_pixel_lcd-7"));
 		label().setVerticalAlignment(spk::VerticalAlignment::Top);
 		label().setHorizontalAlignment(spk::HorizontalAlignment::Left);
 
@@ -47,7 +47,6 @@ public:
 
 		label().setOutlineSize(3);
 		label().setOutlineColor(spk::Color(0, 0, 0));
-		label().setOutlineStyle(spk::Font::OutlineStyle::Standard);
 	}
 };
 
@@ -64,12 +63,12 @@ public:
 	TextEntry(const std::string& p_name, Widget* p_parent) :
 		spk::TextEntry(p_name, p_parent)
 	{
-		box().setSpriteSheet(TextureManager::instance()->spriteSheet("DefaultFrame"));
+		box().setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Gray"));
 		box().setCornerSize(8);
 
 		setPlaceholder("Enter text ...");
 
-		label().setFont(TextureManager::instance()->font("DefaultFont"));
+		label().setFont(TextureAtlas::instance()->font("Pixellari"));
 		label().setVerticalAlignment(spk::VerticalAlignment::Top);
 		label().setHorizontalAlignment(spk::HorizontalAlignment::Left);
 
@@ -78,7 +77,6 @@ public:
 
 		label().setOutlineSize(3);
 		label().setOutlineColor(spk::Color(0, 0, 0));
-		label().setOutlineStyle(spk::Font::OutlineStyle::Standard);
 	}
 };
 
@@ -95,13 +93,13 @@ public:
 	Button(const std::string& p_name, Widget* p_parent) :
 		spk::Button(p_name, p_parent)
 	{
-		box(spk::Button::State::Released).setSpriteSheet(TextureManager::instance()->spriteSheet("DefaultFrame"));
+		box(spk::Button::State::Released).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Gray"));
 		box(spk::Button::State::Released).setCornerSize(8); 
 		
-		box(spk::Button::State::Pressed).setSpriteSheet(TextureManager::instance()->spriteSheet("DarkFrame"));
+		box(spk::Button::State::Pressed).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_DarkGray"));
 		box(spk::Button::State::Pressed).setCornerSize(8);
 
-		label(spk::Button::State::Released).setFont(TextureManager::instance()->font("DefaultFont"));
+		label(spk::Button::State::Released).setFont(TextureAtlas::instance()->font("Pixellari"));
 		label(spk::Button::State::Released).setVerticalAlignment(spk::VerticalAlignment::Centered);
 		label(spk::Button::State::Released).setHorizontalAlignment(spk::HorizontalAlignment::Centered);
 
@@ -110,9 +108,8 @@ public:
 
 		label(spk::Button::State::Released).setOutlineSize(1);
 		label(spk::Button::State::Released).setOutlineColor(spk::Color(0, 0, 0));
-		label(spk::Button::State::Released).setOutlineStyle(spk::Font::OutlineStyle::Standard);
 		
-		label(spk::Button::State::Pressed).setFont(TextureManager::instance()->font("DefaultFont"));
+		label(spk::Button::State::Pressed).setFont(TextureAtlas::instance()->font("Pixellari"));
 		label(spk::Button::State::Pressed).setVerticalAlignment(spk::VerticalAlignment::Centered);
 		label(spk::Button::State::Pressed).setHorizontalAlignment(spk::HorizontalAlignment::Centered);
 
@@ -121,6 +118,5 @@ public:
 
 		label(spk::Button::State::Pressed).setOutlineSize(1);
 		label(spk::Button::State::Pressed).setOutlineColor(spk::Color(0, 0, 0));
-		label(spk::Button::State::Pressed).setOutlineStyle(spk::Font::OutlineStyle::Standard);
 	}
 };

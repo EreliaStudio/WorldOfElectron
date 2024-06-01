@@ -1,18 +1,8 @@
 #include "widget/main_widget.hpp"
 
-void MainWidget::_onUpdate()
-{
-	
-}
-
 void MainWidget::_onGeometryChange()
 {
-	_mainMenuPanel.setGeometry(0, size());
-}
-
-void MainWidget::_onRender()
-{
-	
+	_mainMenuPanel->setGeometry(0, size());
 }
 
 MainWidget::MainWidget(spk::Widget* p_parent) :
@@ -23,8 +13,8 @@ MainWidget::MainWidget(spk::Widget* p_parent) :
 
 MainWidget::MainWidget(const std::string& p_name, spk::Widget* p_parent) :
 	spk::Widget(p_name, p_parent),
-	_textureManagerInstanciator(),
-	_mainMenuPanel("MainPanel", this)
+	_textureAtlasInstanciator(),
+	_mainMenuPanel(new MainMenuPanel("MainMenuPanel", this))
 {
-	_mainMenuPanel.activate();
+	_mainMenuPanel->activate();
 }
