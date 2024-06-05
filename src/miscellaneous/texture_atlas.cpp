@@ -1,4 +1,4 @@
-#include "woe_texture_atlas.hpp"
+#include "texture_atlas.hpp"
 
 TextureAtlas::TextureAtlas()
 {
@@ -9,6 +9,8 @@ TextureAtlas::TextureAtlas()
 	loadSpriteSheet("UI.Frame_LightCyan", "resources/texture/UI/Frame_LightCyan.png", spk::Vector2UInt(3, 3));
 	loadSpriteSheet("UI.Frame_Cyan", "resources/texture/UI/Frame_Cyan.png", spk::Vector2UInt(3, 3));
 	loadSpriteSheet("UI.Frame_DarkCyan", "resources/texture/UI/Frame_DarkCyan.png", spk::Vector2UInt(3, 3));
+
+	loadImage("MainMenu.Background", "resources/texture/illustration/MainMenuBackground.png");
 
 	loadFont("Arial", "resources/font/light-arial.ttf");
 	loadFont("DOS", "resources/font/Perfect DOS VGA 437 Win.ttf");

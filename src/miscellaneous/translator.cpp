@@ -1,6 +1,6 @@
-#include "woe_translator.hpp"
+#include "translator.hpp"
 
-#include "sparkle.hpp"
+#include <sparkle.hpp>
 
 void Translator::load(const std::filesystem::path &filePath)
 {

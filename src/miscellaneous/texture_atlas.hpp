@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sparkle.hpp"
+#include <sparkle.hpp>
 
 class TextureAtlas : public spk::Singleton<TextureAtlas>, public spk::TextureAtlas, public spk::FontAtlas
 {

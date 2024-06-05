@@ -1,5 +1,7 @@
 #include "widget/panel/main_menu_panel.hpp"
 
+#include "widget/main_widget.hpp"
+
 void MainMenuPanel::_onGeometryChange()
 {
 	spk::Vector2Int buttonSize = spk::Vector2UInt(std::min(size().x / 4, 400u), std::min(size().y / 15, 80u));
@@ -44,13 +46,13 @@ void MainMenuPanel::_onGeometryChange()
 MainMenuPanel::MainMenuPanel(spk::Widget* p_parent) :
 	MainMenuPanel("Unnamed MainMenuPanel", p_parent)
 {
-
+	
 }
 
 MainMenuPanel::MainMenuPanel(const std::string& p_name, spk::Widget* p_parent) :
 	spk::Panel(p_name, p_parent)
 {
-	_titleLabel = new TextLabel("TitleLabel", this);
+	_titleLabel = makeChild<TextLabel>("TitleLabel", this);
 	_titleLabel->label().setText("World of Electrons");
 	_titleLabel->label().setVerticalAlignment(spk::VerticalAlignment::Centered);
 	_titleLabel->label().setHorizontalAlignment(spk::HorizontalAlignment::Centered);
@@ -59,25 +61,33 @@ MainMenuPanel::MainMenuPanel(const std::string& p_name, spk::Widget* p_parent) :
 	_titleLabel->box().setSpriteSheet(nullptr);
 	_titleLabel->box().setCornerSize(0);
 	_titleLabel->activate();
+	_titleLabel->setLayer(20);
 
-	_joinButton = new Button("JoinButton", this);
+	_joinButton = makeChild<Button>("JoinButton", this);
+	_joinButton->setOnClickCallback([](){MainWidget::EventManager::instance()->notify_all(MainWidget::Event::EnterJoinMenu);});
 	_joinButton->box(Button::State::Pressed).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_DarkCyan"));
 	_joinButton->box(Button::State::Released).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Cyan"));
 	_joinButton->label(Button::State::Pressed).setText("Join game");
 	_joinButton->label(Button::State::Released).setText("Join game");
 	_joinButton->activate();
+	_joinButton->setLayer(20);
 
-	_hostButton = new Button("HostButton", this);
+	_hostButton = makeChild<Button>("HostButton", this);
+	_hostButton->setOnClickCallback([](){MainWidget::EventManager::instance()->notify_all(MainWidget::Event::EnterHostMenu);});
 	_hostButton->box(Button::State::Pressed).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_DarkCyan"));
 	_hostButton->box(Button::State::Released).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Cyan"));
 	_hostButton->label(Button::State::Pressed).setText("Host game");
 	_hostButton->label(Button::State::Released).setText("Host game");
 	_hostButton->activate();
+	_hostButton->setLayer(20);
 
-	_quitButton = new Button("QuitButton", this);
+	_quitButton = makeChild<Button>("QuitButton", this);
+	_quitButton->setOnClickCallback([](){MainWidget::EventManager::instance()->notify_all(MainWidget::Event::QuitGame);});
 	_quitButton->box(Button::State::Pressed).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_DarkCyan"));
 	_quitButton->box(Button::State::Released).setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Cyan"));
 	_quitButton->label(Button::State::Pressed).setText("Quit");
 	_quitButton->label(Button::State::Released).setText("Quit");
 	_quitButton->activate();
+	_quitButton->setLayer(20);
+
 }

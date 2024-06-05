@@ -1,57 +1,65 @@
 {
    "Anonymous MainWidget": 
    {
-       "Average": 26.241953,
+       "Average": 26.060101,
        "CPU usage": 0.000000,
-       "Cardinal": 8278806,
-       "Max": 44700,
+       "Cardinal": 3061208,
+       "Max": 13000,
        "Min": 0
    },
    "CentralWidget": 
    {
-       "Average": 61.122528,
-       "CPU usage": 0.000000,
-       "Cardinal": 8278806,
-       "Max": 166500,
+       "Average": 67.906746,
+       "CPU usage": 0.000001,
+       "Cardinal": 3061208,
+       "Max": 23500,
        "Min": 0
    },
    "FPSCounter": 
    {
-       "Average": 4154.755371,
-       "Cardinal": 309,
-       "Max": 5460,
+       "Average": 4891.348145,
+       "Cardinal": 89,
+       "Max": 6140,
        "Min": 10
+   },
+   "HostGamePanel": 
+   {
+       "Average": 23.178564,
+       "CPU usage": 0.000000,
+       "Cardinal": 941331,
+       "Max": 19300,
+       "Min": 0
    },
    "MainMenuPanel": 
    {
-       "Average": 29.969521,
+       "Average": 24.685637,
        "CPU usage": 0.000000,
-       "Cardinal": 8278806,
-       "Max": 22600,
+       "Cardinal": 2119880,
+       "Max": 12400,
        "Min": 0
    },
    "TitleLabel": 
    {
-       "Average": 27.672039,
+       "Average": 21.823511,
        "CPU usage": 0.000000,
-       "Cardinal": 8278806,
-       "Max": 23400,
+       "Cardinal": 2119880,
+       "Max": 17600,
        "Min": 0
    },
-   "Total program duration": 33331,
+   "Total program duration": 10912,
    "UPSCounter": 
    {
-       "Average": 268776.437500,
-       "Cardinal": 309,
-       "Max": 2877230,
-       "Min": 175230
+       "Average": 343955.937500,
+       "Cardinal": 89,
+       "Max": 2847780,
+       "Min": 254160
    },
    "Unnamed widget": 
    {
-       "Average": 52.639729,
+       "Average": 47.031082,
        "CPU usage": 0.000000,
-       "Cardinal": 24836418,
-       "Max": 371100,
+       "Cardinal": 8242302,
+       "Max": 59500,
        "Min": 0
    }
 }

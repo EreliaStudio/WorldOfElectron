@@ -1,8 +1,8 @@
 #pragma once
 
-#include "sparkle.hpp"
+#include <sparkle.hpp>
 
-#include "woe_texture_atlas.hpp"
+#include "texture_atlas.hpp"
 
 class Frame : public spk::Frame
 {

@@ -1,13 +1,14 @@
 #pragma once
 
-#include "sparkle.hpp"
-#include "miscellaneous/woe_widget_redefinition.hpp"
+#include <sparkle.hpp>
+#include "miscellaneous/widget_redefinition.hpp"
 
 class MainMenuPanel : public spk::Panel
 {
 private:
 	TextLabel* _titleLabel;
 	Button* _joinButton;
+	
 	Button* _hostButton;
 	Button* _quitButton;
 	void _onGeometryChange() override;
