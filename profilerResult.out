@@ -1,65 +1,89 @@
 {
    "Anonymous MainWidget": 
    {
-       "Average": 26.060101,
-       "CPU usage": 0.000000,
-       "Cardinal": 3061208,
-       "Max": 13000,
+       "Average": 25.019777,
+       "CPU usage": 0.000001,
+       "Cardinal": 271971,
+       "Max": 8500,
        "Min": 0
    },
    "CentralWidget": 
    {
-       "Average": 67.906746,
-       "CPU usage": 0.000001,
-       "Cardinal": 3061208,
-       "Max": 23500,
+       "Average": 65.871841,
+       "CPU usage": 0.000003,
+       "Cardinal": 271971,
+       "Max": 12200,
+       "Min": 0
+   },
+   "Chunk size label": 
+   {
+       "Average": 35.916592,
+       "CPU usage": 0.000002,
+       "Cardinal": 271971,
+       "Max": 11800,
+       "Min": 0
+   },
+   "Chunk size selector": 
+   {
+       "Average": 38.928471,
+       "CPU usage": 0.000002,
+       "Cardinal": 271971,
+       "Max": 9000,
+       "Min": 0
+   },
+   "Chunk size selector - Value Displayer": 
+   {
+       "Average": 36.798527,
+       "CPU usage": 0.000002,
+       "Cardinal": 271971,
+       "Max": 57000,
        "Min": 0
    },
    "FPSCounter": 
    {
-       "Average": 4891.348145,
-       "Cardinal": 89,
-       "Max": 6140,
+       "Average": 3429.999756,
+       "Cardinal": 18,
+       "Max": 4380,
        "Min": 10
    },
    "HostGamePanel": 
    {
-       "Average": 23.178564,
-       "CPU usage": 0.000000,
-       "Cardinal": 941331,
-       "Max": 19300,
+       "Average": 25.538431,
+       "CPU usage": 0.000001,
+       "Cardinal": 271971,
+       "Max": 10900,
        "Min": 0
    },
-   "MainMenuPanel": 
-   {
-       "Average": 24.685637,
-       "CPU usage": 0.000000,
-       "Cardinal": 2119880,
-       "Max": 12400,
-       "Min": 0
-   },
-   "TitleLabel": 
-   {
-       "Average": 21.823511,
-       "CPU usage": 0.000000,
-       "Cardinal": 2119880,
-       "Max": 17600,
-       "Min": 0
-   },
-   "Total program duration": 10912,
+   "Total program duration": 2107,
    "UPSCounter": 
    {
-       "Average": 343955.937500,
-       "Cardinal": 89,
-       "Max": 2847780,
-       "Min": 254160
+       "Average": 151095.015625,
+       "Cardinal": 18,
+       "Max": 199290,
+       "Min": 133050
    },
    "Unnamed widget": 
    {
-       "Average": 47.031082,
-       "CPU usage": 0.000000,
-       "Cardinal": 8242302,
-       "Max": 59500,
+       "Average": 68.104446,
+       "CPU usage": 0.000003,
+       "Cardinal": 1087884,
+       "Max": 16100,
+       "Min": 0
+   },
+   "World name entry": 
+   {
+       "Average": 48.270721,
+       "CPU usage": 0.000002,
+       "Cardinal": 271971,
+       "Max": 12300,
+       "Min": 0
+   },
+   "World name label": 
+   {
+       "Average": 24.223936,
+       "CPU usage": 0.000001,
+       "Cardinal": 271971,
+       "Max": 8600,
        "Min": 0
    }
 }

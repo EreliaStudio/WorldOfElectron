@@ -4,11 +4,22 @@
 
 #include "miscellaneous/widget_redefinition.hpp"
 
+#include "widget/widget/value_selector.hpp"
+
 class HostGamePanel : public spk::Panel
 {
 private:
+	TextLabel* _worldNameLabel;
+	TextEntry* _worldNameEntry;
+	
+	TextLabel* _chunkSizeLabel;
+	ValueSelector<int>* _chunkSizeSelector;
+
 	Button* _confirmButton;
 	Button* _cancelButton;
+
+	void _updateGeometry();
+	void _updateFontSize();
 
 	void _onUpdate() override;
 	void _onGeometryChange() override;

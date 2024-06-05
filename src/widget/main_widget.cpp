@@ -37,5 +37,5 @@ MainWidget::MainWidget(const std::string& p_name, spk::Widget* p_parent) :
 		spk::Application::activeApplication()->quit(0);
 	});
 
-	EventManager::instance()->notify_all(Event::EnterMainMenu);
+	EventManager::instance()->notify_all(Event::EnterHostMenu);
 }

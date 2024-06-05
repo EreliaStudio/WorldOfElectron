@@ -38,7 +38,7 @@ public:
 		box().setSpriteSheet(TextureAtlas::instance()->spriteSheet("UI.Frame_Gray"));
 		box().setCornerSize(8);
 
-		label().setFont(TextureAtlas::instance()->font("advanced_pixel_lcd-7"));
+		label().setFont(TextureAtlas::instance()->font("Pixellari"));
 		label().setVerticalAlignment(spk::VerticalAlignment::Top);
 		label().setHorizontalAlignment(spk::HorizontalAlignment::Left);
 
