@@ -1,0 +1,46 @@
+Input -> VertexPass : Vector2 modelPosition;
+
+VertexPass -> FragmentPass : int nodeID;
+
+struct Node
+{
+	Color color;
+};
+
+ConstantBlock CameraConstants
+{
+	Matrix4x4 MVP;
+};
+
+AttributeBlock ChunkInformations
+{
+	Vector2Int position;
+	int content[16][16][3];
+};
+
+ConstantBlock NodeConstants
+{
+	int nbNodes;
+	Node nodes[256];
+};
+
+VertexPass()
+{
+	int nodeLayer = instanceID / 256;
+    int nodePositionIndex = instanceID % 256;
+
+    Vector2Int nodePosition = Vector2Int(nodePositionIndex % 16, nodePositionIndex / 16);
+
+	pixelPosition = CameraConstants.MVP * Vector4(
+			modelPosition.x + ChunkInformations.position.x * 16 + nodePosition.x,
+			modelPosition.y + ChunkInformations.position.y * 16 + nodePosition.y,
+			nodeLayer,
+			1
+		);
+	nodeID = ChunkInformations.content[nodePosition.x][nodePosition.y][nodeLayer];
+}
+
+FragmentPass()
+{
+	pixelColor = NodeConstants.nodes[nodeID].color;
+}

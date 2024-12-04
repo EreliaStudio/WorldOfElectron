@@ -1,0 +1,94 @@
+## LAYOUTS DEFINITION ##
+0 Vector2 modelPosition
+
+
+## FRAMEBUFFER DEFINITION ##
+0 Color pixelColor
+
+
+## CONSTANTS DEFINITION ##
+CameraConstants_Type CameraConstants 64 64 {
+    MVP 0 64 0 64 1 0 {}
+}
+NodeConstants_Type NodeConstants 4100 4112 {
+    nbNodes 0 4 0 4 1 0 {}
+    nodes 4 16 16 16 256 0 {
+        color 0 16 0 16 1 0 {
+            r 0 4 0 4 1 0 {}
+            g 4 4 4 4 1 0 {}
+            b 8 4 8 4 1 0 {}
+            a 12 4 12 4 1 0 {}
+        }
+    }
+}
+
+
+## ATTRIBUTES DEFINITION ##
+ChunkInformations_Type ChunkInformations 3080 3080 {
+    position 0 8 0 8 1 0 {
+        x 0 4 0 4 1 0 {}
+        y 4 4 4 4 1 0 {}
+    }
+    content 8 4 8 4 768 0 {}
+}
+
+
+## TEXTURES DEFINITION ##
+
+
+## VERTEX SHADER CODE ##
+#version 450
+
+layout (location = 0) in vec2 modelPosition;
+layout (location = 0) out flat int out_instanceID;
+layout (location = 1) out flat int nodeID;
+
+struct Node
+{
+    vec4 color;
+};
+
+layout(constants) uniform CameraConstants_Type
+{
+    mat4 MVP;
+} CameraConstants;
+
+layout(attributes) uniform ChunkInformations_Type
+{
+    ivec2 position;
+    int content[16][16][3];
+} ChunkInformations;
+
+void main()
+{
+    int nodeLayer = (int)(gl_InstanceID / 256);
+    int nodePositionIndex = (int)(gl_InstanceID % 256);
+    ivec2 nodePosition = ivec2(nodePositionIndex % 16, nodePositionIndex / 16);
+    gl_Position = (CameraConstants.MVP * (vec4((modelPosition.x + (ChunkInformations.position.x * 16)) + nodePosition.x, (modelPosition.y + (ChunkInformations.position.y * 16)) + nodePosition.y, nodeLayer, 1)));
+    nodeID = ChunkInformations.content[nodePosition.x][nodePosition.y][nodeLayer];
+    out_instanceID = gl_InstanceID;
+}
+
+## FRAGMENT SHADER CODE ##
+#version 450
+
+layout (location = 0) in flat int instanceID;
+layout (location = 1) in flat int nodeID;
+layout (location = 0) out vec4 pixelColor;
+
+struct Node
+{
+    vec4 color;
+};
+
+layout(constants) uniform NodeConstants_Type
+{
+    int nbNodes;
+    Node nodes[256];
+} NodeConstants;
+
+void main()
+{
+    pixelColor = NodeConstants.nodes[nodeID].color;
+}
+
