@@ -4,8 +4,7 @@
 
 enum class Event
 {
-	NodeListEdited,
-	CameraEdited
+	EnterMainMenuScreen
 };
 
 using EventNotifier = spk::Singleton<spk::EventNotifier<Event>>;

@@ -1,0 +1,38 @@
+{
+	"Images":[
+	],
+	"Fonts":[
+		{
+			"name":"Cocogoose",
+			"path":"resources/font/Cocogoose.ttf"
+		}
+	],
+	"SpriteSheets":[
+		{
+			"name":"menuFrameA",
+			"path":"resources/texture/menuFrameA.png",
+			"size":{
+				"x":3,
+				"y":3
+			}
+		},
+		
+		{
+			"name":"menuFrameB",
+			"path":"resources/texture/menuFrameB.png",
+			"size":{
+				"x":3,
+				"y":3
+			}
+		},
+		
+		{
+			"name":"menuFrameC",
+			"path":"resources/texture/menuFrameC.png",
+			"size":{
+				"x":3,
+				"y":3
+			}
+		}
+	]
+}

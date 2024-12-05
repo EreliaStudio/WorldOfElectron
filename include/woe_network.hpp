@@ -5,7 +5,7 @@
 class ServerWidget : public spk::Widget
 {
 private:
-	spk::Server& _server;
+	spk::Server _server;
 
 	std::unordered_map<spk::Message::Header::Type, std::function<void(const spk::Server::MessageObject&)>> _messageCallbacks;
 
@@ -25,11 +25,15 @@ private:
 	}
 
 public:
-	ServerWidget(const std::wstring& p_name, spk::Server& p_server, const spk::SafePointer<Widget>& p_owner = nullptr) :
-		spk::Widget(p_name, p_owner),
-		_server(p_server)
+	ServerWidget(const std::wstring& p_name, const spk::SafePointer<Widget>& p_owner = nullptr) :
+		spk::Widget(p_name, p_owner)
 	{
 
+	}
+
+	spk::SafePointer<spk::Server> server()
+	{
+		return (&_server);
 	}
 
 	void setupMessageCallback(const spk::Message::Header::Type& p_type, const std::function<void(const spk::Server::MessageObject&)>& p_callback)
@@ -45,7 +49,7 @@ public:
 class ClientWidget : public spk::Widget
 {
 private:
-	spk::Client& _client;
+	spk::Client _client;
 
 	std::unordered_map<spk::Message::Header::Type, std::function<void(const spk::Client::MessageObject&)>> _messageCallbacks;
 
@@ -65,11 +69,15 @@ private:
 	}
 
 public:
-	ClientWidget(const std::wstring& p_name, spk::Client& p_client, const spk::SafePointer<Widget>& p_owner = nullptr) :
-		spk::Widget(p_name, p_owner),
-		_client(p_client)
+	ClientWidget(const std::wstring& p_name, const spk::SafePointer<Widget>& p_owner = nullptr) :
+		spk::Widget(p_name, p_owner)
 	{
 
+	}
+
+	spk::SafePointer<spk::Client> client()
+	{
+		return (&_client);
 	}
 
 	void setupMessageCallback(const spk::Message::Header::Type& p_type, const std::function<void(const spk::Server::MessageObject&)>& p_callback)
